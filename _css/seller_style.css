@@ -1,0 +1,33 @@
+h1,
+h2,
+h3{
+    font-family: 'Kaushan Script', cursive;
+}
+
+p{
+    font-family: 'Kaushan Script', cursive;
+font-family: 'Open Sans', sans-serif;
+font-weight: 400;
+}
+
+body{
+    background-color: black;
+}
+
+#main-text{
+    font-size: 100px;
+    color: white;
+}
+
+#main-btn{
+    background-color: brown;
+    font-family: 'Kaushan Script', cursive;
+    text-transform: capitalize;
+}
+
+#sub-btn{
+    color: white;
+    background-color:dimgray;
+    font-family: 'Kaushan Script', cursive;
+    text-transform: capitalize;
+}
