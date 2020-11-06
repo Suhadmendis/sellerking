@@ -52,7 +52,8 @@
                                     <input v-model="personal.f_name"
                                         class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                                 </div>
-
+                                
+                                
                                 <div class="col-span-6 sm:col-span-3">
                                     <label for="per_l_name" class="block text-sm font-medium leading-5 text-gray-700">Last
                                         name</label>
@@ -60,11 +61,24 @@
                                         class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                                 </div>
 
-                                <div class="col-span-6 sm:col-span-4">
-                                    <label for="per_email"
-                                        class="block text-sm font-medium leading-5 text-gray-700">Email address</label>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="per_email" class="block text-sm font-medium leading-5 text-gray-700">Email address</label>
                                     <input v-model="personal.email"
                                         class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                                </div>
+                                
+                                
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="per_l_name" class="block text-sm font-medium leading-5 text-gray-700">Contact Number</label>
+                                    <input v-model="personal.tel"
+                                        class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                                </div>
+
+
+
+                                <div class="col-span-6 sm:col-span-4">
+                                    
                                 </div>
     
                                 <div class="col-span-6 sm:col-span-4">
@@ -319,8 +333,9 @@
                 f_name : "",
                 l_name : "",
                 email : "",
+                tel: "",
                 pass : "",
-                country : "",
+                country: "",
                 street_address : ""
             },
             business: {
@@ -334,18 +349,18 @@
             }
         },
         methods: {
-            party_save: function (event) {
+            party_save: function () {
           
 
                 axios.post('https://visiti.herokuapp.com/api/auth/registration', {
-                    firstName: "akila",
-                    lastName: "lastName",
-                    nic: "ni1f1gfddgdf11111c",
-                    phoneNo: "phoneNo",
-                    email: "ema11i1l",
-                    address: "address",
-                    cityRef: "cityRef",
-                    cityName: "cityName"
+                    firstName: this.personal.f_name,
+                    lastName: this.personal.l_name,
+                    nic: "",
+                    phoneNo: this.personal.tel,
+                    email: this.personal.email,
+                    address: this.personal.street_address,
+                    cityRef: "",
+                    cityName: ""
                 })
                 .then((response) => {
                     console.log(response);
@@ -353,17 +368,8 @@
                     console.log(error);
                 });
 
+        
                 
-
-
-                // // `this` inside methods points to the Vue instance
-                // alert('Hello ' + this.name + '!')
-                // // `event` is the native DOM event
-                // if (event) {
-                //     alert(event.target.tagName)
-                // }
-
-                console.log(event.target.tagName);
             }
         }
     })
