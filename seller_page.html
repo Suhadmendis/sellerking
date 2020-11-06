@@ -129,34 +129,34 @@
                                     <div class="col-span-6 sm:col-span-3">
                                         <label for="first_name" class="block text-sm font-medium leading-5 text-gray-700">Shop
                                             name</label>
-                                        <input id="first_name"
+                                        <input v-model="business.shop_name"
                                             class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                                     </div>
         
                                     <div class="col-span-6 sm:col-span-3">
                                         <label for="last_name1" class="block text-sm font-medium leading-5 text-gray-700">Tagline
                                             </label>
-                                        <input id="last_name1"
+                                        <input v-model="business.tagline"
                                             class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                                     </div>
         
                                     <div class="col-span-6 sm:col-span-4">
-                                        <label for="email_address2"
+                                        <label for="email_address"
                                             class="block text-sm font-medium leading-5 text-gray-700">Business Email address</label>
-                                        <input id="email_address2"
+                                        <input v-model="business.email_address"
                                             class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                                     </div>
         
                                     <div class="col-span-6">
                                         <label for="street_address"
                                             class="block text-sm font-medium leading-5 text-gray-700">Street address</label>
-                                        <input id="street_address"
+                                        <input v-model="business.street_address"
                                             class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                                     </div>
         
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                                         <label for="city" class="block text-sm font-medium leading-5 text-gray-700">City</label>
-                                        <select id="country"
+                                        <select v-model="business.country"
                                             class="mt-1 block form-select w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                                             <option>United States</option>
                                             <option>Canada</option>
@@ -167,14 +167,14 @@
                                     <!-- <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                                         <label for="state" class="block text-sm font-medium leading-5 text-gray-700">State /
                                             Province</label>
-                                        <input id="state"
+                                        <input v-model="business.state"
                                             class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                                     </div> -->
         
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                                         <label for="postal_code" class="block text-sm font-medium leading-5 text-gray-700">ZIP /
                                             Postal</label>
-                                        <input id="postal_code"
+                                        <input v-model="business.postal_code"
                                             class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                                     </div>
                                 </div>
@@ -321,6 +321,15 @@
                 pass : "",
                 country : "",
                 street_address : ""
+            },
+            business: {
+                shop_name : "",
+                tagline : "",
+                email_address : "",
+                street_address : "",
+                country : "",
+                state : "",
+                postal_code : ""
             }
         },
         methods: {
